@@ -10,34 +10,7 @@
 
     <div class="con">
     <div class="d">
-            <?php
-                $conn = new mysqli("localhost", "root", "", "library", "3308");
-                $result4 = $conn->query("SELECT * FROM  autorzy");
-                echo("<h3>Usuń autora:</h3>");
-                echo("<form action='delete1.php' method='POST' >");
-                echo("<select name='id_autor'>");
-                while($row=$result4->fetch_assoc() ){
-                    echo("<option value='".$row['id_autor']."'>".$row['autor']."</option>");
-                }
-                echo("</select>");
-
-                echo("<input type='submit' value='Zapisz'>");
-                echo("</form>");
-
-                $result5 = $conn->query("SELECT * FROM tytuly");
-
-                echo("<h3>Usuń tytuł:</h3>");
-                echo("<form action='delete2.php' method='POST'  >");
-                echo("<select name='id_tytul'>");
-                while($row=$result5->fetch_assoc() ){
-                    echo("<option value='".$row['id_tytul']."'>".$row['tytul']."</option>");
-                }
-                echo("</select>");
-
-                echo("<input type='submit' value='Zapisz'>");
-                echo("</form>");
-
-            ?>
+          
             </div>
     <div class="c">
           
@@ -53,7 +26,7 @@
               </form>
               <h3>Pozycja na liście</h3>
          <?php
-         $conn = new mysqli("localhost", "root", "", "library", "3308");
+          $conn = new mysqli("remotemysql.com", "wvvSCTqkrf", "mHTNFgQETC", "wvvSCTqkrf", "3306");
            $result2 = $conn->query("SELECT * FROM autorzy");
 
            echo("<form action='insert3.php' method='POST'  >");
@@ -78,7 +51,7 @@
         <div class="a"><h1>BIBLIOTEKA BARTOSZ ZIARNIK</h1></div>
         <div class="b">
           <?php
-           $conn = new mysqli("localhost", "root", "", "library", "3308");
+           $conn = new mysqli("remotemysql.com", "wvvSCTqkrf", "mHTNFgQETC", "wvvSCTqkrf", "3306");
            $result1 = $conn->query("SELECT id_krzyz, autor, tytul FROM krzyz, autorzy, tytuly WHERE krzyz.id_autor=autorzy.id_autor AND krzyz.id_tytul=tytuly.id_tytul");
             
            echo("<table class='tabelka' border=1");
@@ -95,10 +68,7 @@
                echo("<td>".$row['autor']."</td>");
                echo("<td>".$row['tytul']."</td>");
                echo("<td>
-               <form action='delete.php' method='post'>
-                   <input type='hidden' name='id' value='".$row['id_krzyz']."'>
-                   <input type='submit' value='x'>
-               </form>
+               
                       </td>");
                echo("</tr>");
            }

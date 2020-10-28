@@ -1,6 +1,6 @@
 
 <?php
- 		$conn = new mysqli("localhost", "root", "", "library", "3308");
+ 		 $conn = new mysqli("remotemysql.com", "wvvSCTqkrf", "mHTNFgQETC", "wvvSCTqkrf", "3306");
 		$autor = $_POST['auts'];
         $tytul = $_POST['tyts'];
         
