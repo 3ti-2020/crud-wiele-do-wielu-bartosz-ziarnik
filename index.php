@@ -9,10 +9,31 @@
 <body>
 
     <div class="con">
-    <div class="d">
+    <div class="a"><h1>BIBLIOTEKA BARTOSZ ZIARNIK</h1></div>
+    <div class="b">
+          <?php
+           $conn = new mysqli("remotemysql.com", "wvvSCTqkrf", "mHTNFgQETC", "wvvSCTqkrf", "3306");
+           $result1 = $conn->query("SELECT id_krzyz, autor, tytul FROM krzyz, autorzy, tytuly WHERE krzyz.id_autor=autorzy.id_autor AND krzyz.id_tytul=tytuly.id_tytul");
+            
+           echo("<table class='tabelka' border=1");
+           echo("<tr>
+           <th>ID Książki</th>
+           <th>Autor</th>
+           <th>Tytuł</th>
+
+           </tr>");
+
+           while($row=$result1->fetch_assoc() ){
+               echo("<tr>");
+               echo("<td>".$row['id_krzyz']."</td>");
+               echo("<td>".$row['autor']."</td>");
+               echo("<td>".$row['tytul']."</td>");
           
-            </div>
-    <div class="c">
+               echo("</tr>");
+           }
+          ?>
+        </div>
+        <div class="c">
           
           <h3>Autor</h3>
           <form action="insert1.php" method="post">
@@ -48,35 +69,6 @@
            echo("</form>");
          ?>
   </div>
-        <div class="a"><h1>BIBLIOTEKA BARTOSZ ZIARNIK</h1></div>
-        <div class="b">
-          <?php
-           $conn = new mysqli("remotemysql.com", "wvvSCTqkrf", "mHTNFgQETC", "wvvSCTqkrf", "3306");
-           $result1 = $conn->query("SELECT id_krzyz, autor, tytul FROM krzyz, autorzy, tytuly WHERE krzyz.id_autor=autorzy.id_autor AND krzyz.id_tytul=tytuly.id_tytul");
-            
-           echo("<table class='tabelka' border=1");
-           echo("<tr>
-           <th>ID Książki</th>
-           <th>Autor</th>
-           <th>Tytuł</th>
-           <th>Usuwanie</th>
-           </tr>");
-
-           while($row=$result1->fetch_assoc() ){
-               echo("<tr>");
-               echo("<td>".$row['id_krzyz']."</td>");
-               echo("<td>".$row['autor']."</td>");
-               echo("<td>".$row['tytul']."</td>");
-               echo("<td>
-               
-                      </td>");
-               echo("</tr>");
-           }
-          ?>
-        </div>
-        
-            
-         
         
     </div>
     
