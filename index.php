@@ -10,7 +10,7 @@
 
     <div class="con">
     <div class="a"><h1>BIBLIOTEKA BARTOSZ ZIARNIK</h1>
-    <a href="index.html">Karty</a>
+    <a href="index1.html">Karty</a>
     </div>
     <div class="c">
           
