@@ -1,0 +1,12 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.con{
+    height: 100vh;
+    background: lightblue;
+}
+.a,.b{
+    margin: 20px;
+    padding: 20px;
+}
