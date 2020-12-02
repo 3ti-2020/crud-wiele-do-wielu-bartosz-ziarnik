@@ -3,12 +3,13 @@
     margin: 0px;
 }
 .con{
-    height: 100vh;
+    height: 100%;
   
     
     background-image:linear-gradient(to right,wheat, lightblue, lightpink); 
 }
-.a,.b{
+.b{
     margin: 20px;
     padding: 20px;
+    
 }
