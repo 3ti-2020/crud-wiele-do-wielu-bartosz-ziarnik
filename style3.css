@@ -4,7 +4,9 @@
 }
 .con{
     height: 100vh;
-    background: lightblue;
+  
+    
+    background-image:linear-gradient(to right,wheat, lightblue, lightpink); 
 }
 .a,.b{
     margin: 20px;
